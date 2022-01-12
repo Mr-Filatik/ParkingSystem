@@ -1,8 +1,13 @@
+using Ecs.Components.Events;
+using Ecs.Systems;
 using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Ecs {
     sealed class EcsStartup : MonoBehaviour {
+
+        [SerializeField] private UIConfig uIConfig = null;
+
         EcsWorld _world;
         EcsSystems _systems;
 
@@ -17,16 +22,19 @@ namespace Ecs {
 #endif
             _systems
                 // register your systems here, for example:
-                // .Add (new TestSystem1 ())
+                 .Add(new InitSystem())
+                 .Add (new UIClickSystem())
+                 .Add (new LoginSystem())
                 // .Add (new TestSystem2 ())
                 
                 // register one-frame components (order is important), for example:
-                // .OneFrame<TestComponent1> ()
+                 .OneFrame<LoginEvent>()
+                 .OneFrame<ProblemEvent>()
                 // .OneFrame<TestComponent2> ()
                 
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())
-                // .Inject (new NavMeshSupport ())
+                .Inject (uIConfig)
                 .Init ();
         }
 
