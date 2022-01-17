@@ -22,6 +22,7 @@ namespace Ecs.Systems
             {
                 string login = uIConfig.inputLogin.text;
                 string password = uIConfig.inputPassword.text;
+                uIConfig.inputPassword.text = "";
                 if (login == "admin" && password == "admin")
                 {
                     ref var component = ref _world.NewEntity().Get<ChangeScreenEvent>();

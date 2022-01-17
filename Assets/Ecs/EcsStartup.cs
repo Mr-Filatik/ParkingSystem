@@ -30,12 +30,15 @@ namespace Ecs
                  .Add(new InitSystem())
                  .Add(new UIClickSystem())
                  .Add(new LoginSystem())
+                 .Add(new LogoutSystem())
                  .Add(new ChangeScreenSystem())
 
                  // register one-frame components (order is important), for example:
            
                  .OneFrame<LoginEvent>()
+                 .OneFrame<LogoutEvent>()
                  .OneFrame<ProblemEvent>()
+                 .OneFrame<SettingsEvent>()
                  .OneFrame<ChangeScreenEvent>()
 
                 // inject service instances here (order doesn't important), for example:

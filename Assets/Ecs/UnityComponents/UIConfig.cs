@@ -14,4 +14,5 @@ public class UIConfig : MonoBehaviour
     public UIScreen MapScreen = null;
     public UIScreen SettingsScreen = null;
     public UIScreen LogoutScreen = null;
+    public UIScreen ProblemScreen = null;
 }

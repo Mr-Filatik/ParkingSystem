@@ -22,6 +22,7 @@ namespace Ecs.Systems {
             }
             uIConfig.LogoutScreen.Show(false);
             uIConfig.SettingsScreen.Show(false);
+            uIConfig.ProblemScreen.Show(false);
         }
     }
 }
