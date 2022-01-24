@@ -1,4 +1,5 @@
 using Ecs.Components;
+using Ecs.Components.Events;
 using Leopotam.Ecs;
 
 namespace Ecs.Systems {
@@ -9,14 +10,18 @@ namespace Ecs.Systems {
         readonly UIConfig uIConfig = null;
 
         public void Init () {
-            _world.NewEntity().Get<ActiveScreenComponent>().ActiveScreen = uIConfig.LoginScreen;
             if (false) //is authorization - yes
             {
+                _world.NewEntity().Get<ChangeBackgroundEvent>().State = false;
+                _world.NewEntity().Get<ActiveScreenComponent>().ActiveScreen = uIConfig.MapScreen; 
+                _world.NewEntity().Get<InitMapEvent>();
                 uIConfig.LoginScreen.Show(false);
                 uIConfig.MapScreen.Show(true);
             }
             else
             {
+                _world.NewEntity().Get<ChangeBackgroundEvent>().State = true;
+                _world.NewEntity().Get<ActiveScreenComponent>().ActiveScreen = uIConfig.LoginScreen;
                 uIConfig.LoginScreen.Show(true);
                 uIConfig.MapScreen.Show(false);
             }

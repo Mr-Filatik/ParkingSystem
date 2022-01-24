@@ -28,18 +28,24 @@ namespace Ecs
             _systems
                  // register your systems here, for example:
                  .Add(new InitSystem())
+                 .Add(new InitMapSystem())
                  .Add(new UIClickSystem())
                  .Add(new LoginSystem())
                  .Add(new LogoutSystem())
                  .Add(new ChangeScreenSystem())
+                 .Add(new ChangeWindowSystem())
+                 .Add(new ChangeBackgroundSystem())
 
                  // register one-frame components (order is important), for example:
-           
+
                  .OneFrame<LoginEvent>()
+                 .OneFrame<InitMapEvent>()
                  .OneFrame<LogoutEvent>()
                  .OneFrame<ProblemEvent>()
                  .OneFrame<SettingsEvent>()
                  .OneFrame<ChangeScreenEvent>()
+                 .OneFrame<ChangeWindowEvent>()
+                 .OneFrame<ChangeBackgroundEvent>()
 
                 // inject service instances here (order doesn't important), for example:
                 // .Inject (new CameraService ())

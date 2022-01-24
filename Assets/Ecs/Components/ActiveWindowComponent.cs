@@ -1,5 +1,5 @@
 namespace Ecs.Components {
     struct ActiveWindowComponent {
-        public UIScreen ActiveWindow;
+        public UIWindow ActiveWindow;
     }
 }

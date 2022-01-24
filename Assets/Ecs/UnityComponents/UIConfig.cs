@@ -15,4 +15,11 @@ public class UIConfig : MonoBehaviour
     public UIScreen SettingsScreen = null;
     public UIScreen LogoutScreen = null;
     public UIScreen ProblemScreen = null;
+
+    [Header("Backgrounds")]
+    public UIBackground UIBackground = null;
+
+    [Header("Windows")]
+    public UIWindow InfoWindow = null;
+    public UIWindow BookingWindow = null;
 }

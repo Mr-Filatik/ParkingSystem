@@ -11,6 +11,10 @@ namespace Ecs.Systems
 {
     sealed class ChangeScreenSystem : IEcsRunSystem
     {
+        readonly EcsWorld _world = null;
+
+        readonly UIConfig uIConfig = null;
+
         readonly EcsFilter<ChangeScreenEvent> changeScreenEvents = null;
         readonly EcsFilter<ActiveScreenComponent> activeScreenComponents = null;
 
@@ -19,6 +23,14 @@ namespace Ecs.Systems
             foreach (var idx in changeScreenEvents)
             {
                 ref var e = ref changeScreenEvents.Get1(idx);
+                if (e.Screen == uIConfig.MapScreen)
+                {
+                    _world.NewEntity().Get<ChangeBackgroundEvent>().State = false;
+                }
+                else
+                {
+                    _world.NewEntity().Get<ChangeBackgroundEvent>().State = true;
+                }
                 foreach (var idx1 in activeScreenComponents)
                 {
                     ref var c = ref activeScreenComponents.Get1(idx1);
