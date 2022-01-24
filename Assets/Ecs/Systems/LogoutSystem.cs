@@ -11,9 +11,7 @@ namespace Ecs.Systems
     sealed class LogoutSystem : IEcsRunSystem
     {
         readonly EcsWorld _world = null;
-
         readonly UIConfig uIConfig = null;
-
         readonly EcsFilter<LogoutEvent> logoutEvents = null;
 
         public void Run()

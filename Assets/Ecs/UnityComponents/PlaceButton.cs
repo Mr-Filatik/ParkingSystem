@@ -9,6 +9,7 @@ public class PlaceButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //синглтон мира и здесь создавать сущность
         Debug.Log(222);
         sprite.color = Color.black;
     }

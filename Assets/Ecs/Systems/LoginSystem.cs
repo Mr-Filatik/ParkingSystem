@@ -11,9 +11,7 @@ namespace Ecs.Systems
     sealed class LoginSystem : IEcsRunSystem
     {
         readonly EcsWorld _world = null;
-
         readonly UIConfig uIConfig = null;
-
         readonly EcsFilter<LoginEvent> loginEvents = null;
 
         public void Run()

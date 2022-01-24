@@ -12,9 +12,7 @@ namespace Ecs.Systems
     sealed class InitMapSystem : IEcsRunSystem
     {
         readonly EcsWorld _world = null;
-
         readonly UIConfig uIConfig = null;
-
         readonly EcsFilter<InitMapEvent> initMapEvents = null;
 
         public void Run()

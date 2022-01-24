@@ -12,7 +12,6 @@ namespace Ecs.Systems
     sealed class ChangeBackgroundSystem : IEcsRunSystem
     {
         readonly UIConfig uIConfig = null;
-
         readonly EcsFilter<ChangeBackgroundEvent> changeBackgroundEvents = null;
 
         public void Run()

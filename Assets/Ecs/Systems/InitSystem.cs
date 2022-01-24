@@ -6,7 +6,6 @@ namespace Ecs.Systems {
     sealed class InitSystem : IEcsInitSystem 
     {
         readonly EcsWorld _world = null;
-
         readonly UIConfig uIConfig = null;
 
         public void Init () {

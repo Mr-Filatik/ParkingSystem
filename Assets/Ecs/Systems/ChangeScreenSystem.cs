@@ -12,9 +12,7 @@ namespace Ecs.Systems
     sealed class ChangeScreenSystem : IEcsRunSystem
     {
         readonly EcsWorld _world = null;
-
         readonly UIConfig uIConfig = null;
-
         readonly EcsFilter<ChangeScreenEvent> changeScreenEvents = null;
         readonly EcsFilter<ActiveScreenComponent> activeScreenComponents = null;
 
